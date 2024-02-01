@@ -12,6 +12,10 @@ class Category(models.Model):
     title = models.CharField(max_length=255)  # текстове(str) поле
     created_at = models.DateTimeField(default=timezone.now)  # дата буде створюватися автоматично
 
+    # для відображення заголовка в адмінці
+    def __str__(self):
+        return self.title
+
 
 class Course(models.Model):
     title = models.CharField(max_length=300)
@@ -22,3 +26,7 @@ class Course(models.Model):
     # автоматично будуть видалені всі курси в цій категорії. Так звязали курс з категоріями
     categoty = models.ForeignKey(Category, on_delete=models.CASCADE)
     created_at = models.DateTimeField(default=timezone.now)  # дата буде створюватися автоматично
+
+    # для відображення заголовка в адмінці
+    def __str__(self):
+        return f"{self.title} price {self.price}"
