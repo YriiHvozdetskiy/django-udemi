@@ -21,3 +21,8 @@ def index(request):  # функція виду
 
     # {'courses': courses} - контекст
     return render(request, 'courses.html', {'courses': courses})
+
+
+def single_course(request, course_id):  # функція виду
+    course = Course.objects.get(pk=course_id)
+    return render(request, 'single_course.html', {'course': course})

@@ -1,7 +1,8 @@
 from django.urls import path
-
-from shop.views import index
+from . import views
 
 urlpatterns = [
-    path('', index, name='index')
+    path('', views.index, name='index'),
+    # course_id - називаєм як хочем параметр маршрута
+    path('<int:course_id>', views.single_course, name='single_course'),
 ]
