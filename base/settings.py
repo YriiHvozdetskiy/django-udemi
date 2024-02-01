@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',  # для скачування статичних файлів з сервера (css ітд)
+
+    'shop.apps.ShopConfig',
 ]
 
 MIDDLEWARE = [
