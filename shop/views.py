@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
 """
 views - це контролер в патерні MVC
@@ -6,4 +7,8 @@ views - це контролер в патерні MVC
 - виконують прийом запитів від користувача і передачу відповіді користувачу
 """
 
+
 # Create your views here.
+#  опрацьовуєм звернення на головну сторінку(shop)
+def index(request):  # функція виду
+    return HttpResponse('Hello from the Shop app')
