@@ -18,4 +18,6 @@ def index(request):  # функція виду
     courses = Course.objects.all()  # отримання всіх курсів
     # return HttpResponse(''.join([str(course) + '<br>' for course in courses]))  # виводимо через br один під одним
     # return HttpResponse(courses)
-    return render(request, 'courses.html', )
+
+    # {'courses': courses} - контекст
+    return render(request, 'courses.html', {'courses': courses})
