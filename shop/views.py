@@ -20,7 +20,7 @@ def index(request):  # функція виду
     # return HttpResponse(courses)
 
     # {'courses': courses} - контекст
-    return render(request, 'courses.html', {'courses': courses})
+    return render(request, 'shop/courses.html', {'courses': courses})
 
 
 def single_course(request, course_id):  # функція виду
@@ -33,4 +33,4 @@ def single_course(request, course_id):  # функція виду
 
     # OPTION 2
     course = get_object_or_404(Course, pk=course_id)
-    return render(request, 'single_course.html', {'course': course})
+    return render(request, 'shop/single_course.html', {'course': course})

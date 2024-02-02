@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+
+# BASE_DIR = це pycharm-django
+
 BASE_DIR = Path(__file__).resolve().parent.parent  # шлях до корневої папки pycharm-django
 
 # Quick-start development settings - unsuitable for production
@@ -54,8 +57,8 @@ ROOT_URLCONF = 'base.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [BASE_DIR / 'templates'],
+        'APP_DIRS': True,  # django шукає шаблони в папці приложенія(shop)
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
