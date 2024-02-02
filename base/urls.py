@@ -15,9 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from api.models import CourseResource, CategoryResource
+
+course_resource = CourseResource()
+category_resource = CategoryResource()
 
 #  глобальні надаштування для всього проєкту
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('shop/', include('shop.urls'))  # включаєм всі маршрути які в файлі shop/urls.py
+    path('shop/', include('shop.urls')),  # включаєм всі маршрути які в файлі shop/urls.py
+    path('api/', include(course_resource.urls)),  # api/courses
+    path('api/', include(category_resource.urls)),  # api/categories
 ]
