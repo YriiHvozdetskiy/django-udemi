@@ -6,7 +6,7 @@ from django.utils import timezone
 """
 
 
-# наслідуємося від models.Model
+# наслідуємося від models.Model для роботи з базою даних
 class Category(models.Model):
     # вказуєм які поля будуть в базі даних
     title = models.CharField(max_length=255)  # текстове(str) поле
