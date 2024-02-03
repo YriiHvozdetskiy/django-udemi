@@ -1,6 +1,6 @@
 from tastypie.resources import ModelResource
 from shop.models import Category, Course
-from tastypie.authentication import Authentication
+from tastypie.authorization import Authorization
 from .authentication import CustomAuthentication
 
 """
@@ -23,4 +23,4 @@ class CourseResource(ModelResource):
         resource_name = 'courses'  # імя яке буде в маршруті: api/courses
         allowed_methods = ['get', 'post', 'delete']  # які REST методи дозволяємо
         authentication = CustomAuthentication()
-        authorization = Authentication()
+        authorization = Authorization()
