@@ -24,7 +24,7 @@ class Course(models.Model):
     reviews = models.IntegerField()
     # ForeignKey ключ з другої таблиці, on_delete=models.CASCADE - при видалені певної категорії,
     # автоматично будуть видалені всі курси в цій категорії. Так звязали курс з категоріями
-    categoty = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     created_at = models.DateTimeField(default=timezone.now)  # дата буде створюватися автоматично
 
     # для відображення заголовка в адмінці
