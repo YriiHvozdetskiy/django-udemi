@@ -33,5 +33,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('shop/', include('shop.urls')),  # включаєм всі маршрути які в файлі shop/urls.py
-    path('api/', include('api.urls')),
+    path('api/', include('api.urls')),  # включаєм всі маршрути які в api приложенії
 ]
