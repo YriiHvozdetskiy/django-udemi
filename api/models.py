@@ -27,6 +27,8 @@ class CourseResource(ModelResource):
 
     # hydrate - дані приходять від клієнта і йдуть на сервер
     def hydrate(self, bundle):
+        print(f"bundle {bundle}")
+        # bundle <Bundle for obj: '<Course:  price None>' and with data: '{'price': 20.0, 'resource_uri': '/api/v1/courses/2/', 'reviews': 10, 'students_qty': 10, 'title': 'Complete Java', 'category_id': 1}'>
         bundle.obj.category_id = bundle.data['category_id']
         return bundle
 
@@ -36,4 +38,6 @@ class CourseResource(ModelResource):
         return bundle
 
     def dehydrate_title(self, bundle):
+        print(f"bundle {bundle}")
+        # bundle <Bundle for obj: '<Course: Complete Python price 89.99>' and with data: '{'resource_uri': '/api/v1/courses/1/', 'id': 1, 'title': 'Complete Python'}'>
         return bundle.data['title'].upper()
