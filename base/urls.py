@@ -16,14 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from api.models import CourseResource, CategoryResource
+from tastypie.api import Api
+
+api = Api(api_name='v1')
 
 course_resource = CourseResource()
 category_resource = CategoryResource()
+
+api.register(course_resource)  # api/v1/courses
+api.register(category_resource)  # api/v1/category
 
 #  глобальні надаштування для всього проєкту
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('shop/', include('shop.urls')),  # включаєм всі маршрути які в файлі shop/urls.py
-    path('api/', include(course_resource.urls)),  # api/courses
-    path('api/', include(category_resource.urls)),  # api/categories
+    path('api/', include(api.urls)),
 ]
