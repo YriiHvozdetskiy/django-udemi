@@ -7,3 +7,4 @@
 4. `python manage.py runserver`
    - запуск сервера
    - запуск сервера на іншому потрі `python manage.py runserver 9000`
+
