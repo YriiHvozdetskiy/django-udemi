@@ -19,7 +19,7 @@ def index(request):  # функція виду
     # return HttpResponse(''.join([str(course) + '<br>' for course in courses]))  # виводимо через br один під одним
     # return HttpResponse(courses)
 
-    # {'courses': courses} - контекст
+    # {'courses': courses} - контекст потрапляє в templates
     return render(request, 'shop/courses.html', {'courses': courses})
 
 
@@ -32,5 +32,5 @@ def single_course(request, course_id):  # функція виду
     #     raise Http404()
 
     # OPTION 2
-    course = get_object_or_404(Course, pk=course_id)
+    course = get_object_or_404(Course, pk=course_id)  # - контекст потрапляє в templates
     return render(request, 'shop/single_course.html', {'course': course})
