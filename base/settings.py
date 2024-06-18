@@ -14,9 +14,9 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
-# BASE_DIR = це pycharm-django
+# BASE_DIR = це django(udemi)
 
-BASE_DIR = Path(__file__).resolve().parent.parent  # шлях до корневої папки pycharm-django
+BASE_DIR = Path(__file__).resolve().parent.parent  # шлях до корневої папки django(udemi)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
